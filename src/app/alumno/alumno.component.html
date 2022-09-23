@@ -1,0 +1,67 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form [formGroup]="form" autocomplete="off" (ngSubmit)="save()">
+                          <div class="row">
+                              <div class="col-md-5">
+                                <mat-form-field class="example-full-width">
+                                    <input (change)="validaDato($event)" matInput formControlName="nombre" placeholder="Nombre" >
+                                  </mat-form-field>
+                              </div>
+                             
+                          </div>
+                         
+                          <div class="row">
+                              <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                  <input  matInput formControlName="edad" placeholder="edad" type="number">
+                                </mat-form-field>
+                              </div>
+                          </div>
+						<div class="row">
+                            <div class="col-md-12">
+	                          <mat-form-field appearance="fill">
+								  <mat-label>Select an option</mat-label>
+								  <mat-select [(value)]="selected">
+								    <mat-option value="na">None</mat-option>
+								    <mat-option value="soltero">soltero</mat-option>
+								    <mat-option value="casado">casado</mat-option>
+								    <mat-option value="divorciado">divorciado</mat-option>
+								  </mat-select>
+								</mat-form-field>
+							</div>
+						</div>
+                          <button mat-raised-button type="submit" [disabled]="!form.valid" class="btn btn-danger pull-right">Update Alumno</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="javascript:void(0)">
+                          <img class="img" src="./assets/img/faces/marc.jpg" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category text-gray">CEO / Co-Founder</h6>
+                      <h4 class="card-title">Alec Thompson</h4>
+                      <p class="card-description">
+                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                      </p>
+                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <a (click)="goToLink('http://localhost:8080/alumno/download2')">page link</a>
+  </div>
+</div>
